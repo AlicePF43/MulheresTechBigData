@@ -1,0 +1,30 @@
+
+def calcular_imc(peso, altura):
+    imc = peso / (altura ** 2) # definida a função para receber dois parâmetros: peso e altura
+    if imc < 18.5: #Dependendo do valor do IMC, a função atribui uma classificação:
+        classificacao = "Abaixo do peso" 
+    elif 18.5 <= imc < 24.9:
+        classificacao = "Peso normal"
+    elif 25 <= imc < 29.9:
+        classificacao = "Sobrepeso"
+    elif 30 <= imc < 34.9:
+        classificacao = "Obesidade grau I"
+    elif 35 <= imc < 39.9:
+        classificacao = "Obesidade grau II"
+    else:
+        classificacao = "Obesidade grau III"
+    return imc, classificacao #A função retorna o valor do IMC e a classificação correspondente.
+
+# Entrada do usuário
+quantidade = int(input("Digite a quantidade de pessoas: "))
+
+for i in range(quantidade): # O loop iterar sobre o número de pessoas. Para cada pessoa, o programa solicita o peso e a altura.
+    print(f"\nPessoa {i+1}:")
+    peso = float(input("Digite o peso (kg): "))
+    altura = float(input("Digite a altura (m): "))
+    
+    # Cálculo do IMC
+    imc, classificacao = calcular_imc(peso, altura) #A função calcular_imc é chamada com os valores de peso e altura fornecidos pelo usuário.
+    
+    # Exibição do resultado
+    print(f"IMC = {imc:.2f}, Classificação = {classificacao}") #O resultado (IMC e classificação) é exibido formatado com duas casas decimais
