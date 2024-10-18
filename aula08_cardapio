@@ -1,0 +1,37 @@
+def mostrar_cardapio():
+    cardapio = [
+        ["Pizza", 25.00],
+        ["Hambúrguer", 15.00],
+        ["Salada", 10.00],
+        ["Refrigerante", 5.00]
+    ]
+    print("Cardápio:")
+    for i in range(4):
+        print(f"{i + 1}. {cardapio[i][0]} - R${cardapio[i][1]:.2f}")
+    return cardapio
+
+def realizar_pedido(cardapio):
+    pedido = []
+    while True:
+        codigo = int(input("Digite o código do item que deseja pedir (0 para finalizar): "))
+        if codigo == 0:
+            break
+        elif 1 <= codigo <= 4:
+            pedido.append(cardapio[codigo - 1])
+            print(f"{cardapio[codigo - 1][0]} adicionado ao pedido.")
+        else:
+            print("Código inválido. Tente novamente.")
+    return pedido
+
+def fechar_conta(pedido):
+    total = 0
+    print("\nSeu pedido:")
+    for item in pedido:
+        print(f"{item[0]} - R${item[1]:.2f}")
+        total += item[1]
+    print(f"Total a pagar: R${total:.2f}")
+
+# Executa o programa
+cardapio = mostrar_cardapio()
+pedido = realizar_pedido(cardapio)
+fechar_conta(pedido)
