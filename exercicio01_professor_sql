@@ -1,11 +1,11 @@
 -- create a table
 CREATE TABLE professor (
-  id INTEGER PRIMARY KEY,
-  name TEXT NOT NULL,
+  inscricao INTEGER PRIMARY KEY, 
+  name_professor TEXT NOT NULL,
   unidade TEXT NOT NULL
 );
 -- insert some values
 INSERT INTO professor VALUES (1, 'José', 'Senac_Riachuelo');
 INSERT INTO professor VALUES (2, 'Douglas', 'Senac_Copacabana');
 -- fetch some values
-SELECT * FROM professor WHERE unidade = 'Senac_Copacabana';
+SELECT * FROM professor;
